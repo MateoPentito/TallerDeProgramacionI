@@ -14,22 +14,33 @@ public class Funcion {
 		this.asientos = new ArrayList<>();
 	}
 	
-	
-
-	
-	private void setDia(String dia) {
-		
-		this.dia=dia;
-	}
-
 	public void agregarAsientos(Asiento asiento) {
 		this.asientos.add(asiento);
 	}
 
 
+	
+	public String mostrarFuncion() {
+		return "Dia: "+dia+"  -  Hora: "+hora;
+	}
+	
 	@Override
 	public String toString() {
-		return "Funcion [dia=" + dia + ", hora=" + hora + ", asientos=" + asientos + "]";
+		return "Funcion [dia=" + dia + ", hora=" + hora + "]  | Asientos " + asientos;
+	}
+
+
+
+
+	public String getDia() {
+		return dia;
+	}
+
+
+
+
+	public String getHora() {
+		return hora;
 	}
 
 	
