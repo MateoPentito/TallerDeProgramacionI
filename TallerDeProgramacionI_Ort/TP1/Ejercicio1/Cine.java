@@ -14,27 +14,45 @@ public class Cine {
 		this.entradas = new ArrayList<>();
 	}
 
-	public void procesarEntradas(ArrayList<Entrada> entrada) {
+	public boolean procesarEntradas(ArrayList<Entrada> entrada) {
+		boolean procesoEntrada = false;
 		for (int i = 0; i < this.funciones.size(); i++) {
-			
 
 			for (int j = 0; j < this.entradas.size(); j++) {
-				
-				if (this.funciones.get(i).equals(entrada.get(j).getFuncion())){
-					System.out.println("Sala: "+sala+ " - "+this.entradas.get(j).mostrarEntrada()+"\n");
 
+				if (this.funciones.get(i).equals(entrada.get(j).getFuncion())) {
+					if(this.entradas.get(j).getAsiento().getEstado() == Estado.RESERVADO) {
+						this.entradas.get(j).cumplirAsiento();
+						procesoEntrada = true;
+					}
 				}
-				
+
 			}
 		}
 
+		return procesoEntrada;
 	}
 
 	public ArrayList<Entrada> emitirEntradas() {
-		ArrayList<Entrada> entrada;
-		entrada = this.entradas;
+		ArrayList<Entrada> entrada = this.entradas;
+
+		for (int i = 0; i < this.funciones.size(); i++) {
+			for (int j = 0; j < this.entradas.size(); j++) {
+				if (this.funciones.get(i).equals(entrada.get(j).getFuncion())) {
+					this.entradas.get(j).reservarAsiento();
+				}
+			}
+		}
+
 		return entrada;
 	}
+	
+	public void mostrarEntradas() {
+		for(Entrada entrada : this.entradas) {
+			System.out.println("Sala: " + sala + " - " + entrada.mostrarEntrada()+"\n");
+		}
+	}
+	
 
 	public void agregarEntrada(Entrada entrada) {
 		this.entradas.add(entrada);
@@ -43,5 +61,5 @@ public class Cine {
 	public void agregarFuncion(Funcion funcion) {
 		this.funciones.add(funcion);
 	}
-	
+
 }

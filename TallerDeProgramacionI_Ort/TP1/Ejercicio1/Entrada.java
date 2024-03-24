@@ -14,14 +14,17 @@ public class Entrada {
 	
 	
 	public void reservarAsiento() {
-		
-		
+		asiento.modificarEstado(Estado.RESERVADO);	
+	}
+	
+	public void cumplirAsiento() {
+		asiento.modificarEstado(Estado.CUMPLIDO);	
 	}
 
 
 	public String mostrarEntrada() {
 		return "Dia: "+funcion.getDia() +"  -  Hora: "+ funcion.getHora()+"\n"+
-				"Fila: "+asiento.getFila()+"  -  Asiento: "+asiento.getLetra();
+				"Fila: "+asiento.getFila()+"  -  Asiento: "+asiento.getLetra() + "  =  Estado del asiento: "+ asiento.getEstado();
 	}
 	
 

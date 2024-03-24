@@ -9,7 +9,7 @@ public class Asiento {
 	public Asiento(int fila, char letra) {
 		setFila(fila);
 		setLetra(letra);
-		this.estado = Estado.LIBRE;
+		this.estado = estado;
 	}
 
 	@Override
@@ -41,6 +41,10 @@ public class Asiento {
 			letraEncontrada = true;
 		}
 		return letraEncontrada;
+	}
+	
+	public void modificarEstado(Estado estado) {
+		this.estado = estado;
 	}
 
 	public Estado getEstado() {
