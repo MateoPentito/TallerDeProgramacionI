@@ -28,13 +28,13 @@ public class Test {
 		Entrada entrada3 = new Entrada(funcion2, asiento3);
 		Entrada entrada4 = new Entrada(funcion2, asiento4);
 
-		// SE AGREGAR ASIENTOS A LAS FUNCIONES//
+		// SE AGREGAN ASIENTOS A LAS FUNCIONES//
 		funcion1.agregarAsientos(asiento1);
 		funcion1.agregarAsientos(asiento2);
 		funcion2.agregarAsientos(asiento3);
 		funcion2.agregarAsientos(asiento4);
 
-		// SE AGREGAR ENTRADAS A LA SALA//
+		// SE AGREGAN ENTRADAS A LA SALA//
 		sala.agregarEntrada(entrada1);
 		sala.agregarEntrada(entrada2);
 		sala.agregarEntrada(entrada3);
