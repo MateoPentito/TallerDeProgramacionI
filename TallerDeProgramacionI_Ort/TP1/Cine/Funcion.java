@@ -1,4 +1,4 @@
-package Ejercicio1;
+package Cine;
 
 import java.util.ArrayList;
 

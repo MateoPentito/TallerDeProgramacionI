@@ -1,4 +1,4 @@
-package Ejercicio1;
+package Cine;
 
 public enum Estado {
 	LIBRE,RESERVADO,CUMPLIDO;
