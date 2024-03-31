@@ -18,6 +18,8 @@ public class Test {
 
 		System.out.println(grupo.getCantidadIntegrantes()); 
 		
+		System.out.println(grupo.obtenerPosicionIntegrante("Santino"));
+		
 		
 	}
 

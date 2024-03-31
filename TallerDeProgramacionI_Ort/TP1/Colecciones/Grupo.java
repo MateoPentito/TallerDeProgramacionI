@@ -12,50 +12,24 @@ public class Grupo {
 		this.integrantes = new ArrayList<>();
 	}
 
-	private int obtenerPosicionIntegrante(String nombreIntegrante) {
+	public int obtenerPosicionIntegrante(String nombreIntegrante) {
 		int posicion = 0;
 		int i = 0;
 		boolean integranteEncontrado = false;
 
-		while (i < this.integrantes.size() && integranteEncontrado == false) {
-			if (this.integrantes.get(i).equals(nombreIntegrante)) {
-				integranteEncontrado = true;
+		while(i < this.integrantes.size() && integranteEncontrado == false) {
+			if(this.integrantes.get(i).equals(nombreIntegrante)) {
+				posicion = this.integrantes.size();
 			}
-			posicion++;
 			i++;
 		}
+
 
 		return posicion;
 	}
 
 	public void agregarIntegrantes(String nombreIntegrante) {
-		int i = 0;
-		boolean encontrado = false;
-		if (this.integrantes.isEmpty()) {
-			this.integrantes.add(nombreIntegrante);
-			System.out.println("Se agrego "+nombreIntegrante);
-		} else {
-			
-			while(i < this.integrantes.size() && encontrado ==false) {
-				
-				if (!this.integrantes.get(i).equals(nombreIntegrante)) {
-					this.integrantes.add(nombreIntegrante);
-					System.out.println("Se agrego "+nombreIntegrante);
-					encontrado = true;
-					
-					for(int j =0; j < this.integrantes.size();j++) {
-						if(this.integrantes.get(j).equals(nombreIntegrante)) {
-							System.out.println("Se remueve: "+this.integrantes.remove(j));
-						}
-					}
-					
-				}
-				i++;
-				
-
-			}
-
-		}
+		this.integrantes.add(nombreIntegrante);
 
 	}
 
