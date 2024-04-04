@@ -10,7 +10,7 @@ public class Test {
 		Vendedor vendedor1 = new Vendedor("Pedro",25,100,200,5);
 		Vendedor vendedor2 = new Vendedor("Maria",30,100,200,10);
 		
-		System.out.println( asalariado.toString());
+		System.out.println(asalariado.toString());
 		System.out.println(subcontratado.toString());
 		System.out.println(vendedor1.toString());
 		System.out.println(vendedor2.toString());
